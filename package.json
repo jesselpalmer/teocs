@@ -1,7 +1,7 @@
 {
   "name": "teocs-solutions",
   "version": "0.0.0",
-  "description": "Exercises from The Elements of Computer Systems book",
+  "description": "Solutions to the exercises from The Elements of Computer Systems book",
   "scripts": {
     "test": "./test.sh"
   },
