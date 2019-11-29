@@ -1,0 +1,18 @@
+{
+  "name": "teocs-solutions",
+  "version": "0.0.0",
+  "description": "Exercises from The Elements of Computer Systems book",
+  "scripts": {
+    "test": "./test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesselpalmer/teocs-solutions.git"
+  },
+  "author": "Jesse Palmer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jesselpalmer/teocs-solutions/issues"
+  },
+  "homepage": "https://github.com/jesselpalmer/teocs-solutions#readme"
+}
