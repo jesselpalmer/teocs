@@ -1,8 +1,8 @@
 echo "Executing tests"
-node ./logic-gates/and/and.spec.js
-node ./logic-gates/or/or.spec.js
-node ./logic-gates/nand/nand.spec.js
-node ./logic-gates/nor/nor.spec.js
-node ./logic-gates/not/not.spec.js
-node ./logic-gates/xor/xor.spec.js
+node ./chapter_1/boolean-functions/and/and.spec.js
+node ./chapter_1/boolean-functions/or/or.spec.js
+node ./chapter_1/boolean-functions/nand/nand.spec.js
+node ./chapter_1/boolean-functions/nor/nor.spec.js
+node ./chapter_1/boolean-functions/not/not.spec.js
+node ./chapter_1/boolean-functions/xor/xor.spec.js
 echo "Tests completed"
