@@ -1,6 +1,3 @@
-const and = (...nums) => {
-  const result = nums.every(num => num === 1)
-  return result ? 1 : 0
-}
+const and = (a, b) => a & b
 
 module.exports = and
