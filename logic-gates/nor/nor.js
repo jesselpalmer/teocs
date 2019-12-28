@@ -1,5 +1,5 @@
 const or = require('../or')
 
-const nor = (...nums) => or(...nums) === 1 ? 0 : 1
+const nor = (a, b) => or(a, b) === 1 ? 0 : 1
 
 module.exports = nor
