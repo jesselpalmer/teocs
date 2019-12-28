@@ -4,7 +4,7 @@ const not = require('../not')
 /**
  * nand
  * ----
- * Takes in two binary numbers and returns 0 if both numbers equals one, otherwise returns 1.
+ * Takes in two binary numbers and returns 0 if both numbers equals 1, otherwise returns 1.
  * 
  * Truth Table
  * ------------------------
