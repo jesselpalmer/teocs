@@ -18,7 +18,6 @@
  * 
  * @returns binary number
  */
-
 const and = (a, b) => a & b
 
 module.exports = and
