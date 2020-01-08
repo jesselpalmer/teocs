@@ -1,4 +1,4 @@
-const or = require('../or')
+const and = require('../and')
 const not = require('../not')
 
 /**
@@ -21,6 +21,6 @@ const not = require('../not')
  * 
  * @returns binary number
  */
-const nand = (a, b) => or(not(a), not(b))
-
+// const nand = (a, b) => or(not(a), not(b))
+const nand = (a, b) => not(and(a, b))
 module.exports = nand
