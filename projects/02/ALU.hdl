@@ -41,15 +41,37 @@ CHIP ALU {
         zr, // 1 if (out == 0), 0 otherwise
         ng; // 1 if (out < 0),  0 otherwise
 
-    // Use Add16 + chips in project 1. Should be less than 20 lines of code
-    /** 
-    * Multiplexor:
-     * out = a if sel == 0
-     *       b otherwise
-     */
-
     PARTS:
-    Mux16(a=x[0..15], b=x, sel=zx, out=out[16]);
-    // Not16(in=outx1, out=notoutx);
-    // Mux16(a=notoutx, b=outx1, sel=nx, out=outx2);
+    // zx === 1
+    Mux16(a=x, b=false, sel=zx, out=outZx);
+
+    // nx === 1
+    Not16(in=outZx, out=notX);
+    Mux16(a=outZx, b=notX, sel=nx, out=outNx);
+
+    // zy === 1
+    Mux16(a=y, b=false, sel=zy, out=outZy);
+
+    // ny === 1
+    Not16(in=outZy, out=notY);
+    Mux16(a=outZy, b=notY, sel=ny, out=outNy);
+
+    // f == 1
+    Add16(a=outNx, b=outNy, out=outXAddY);
+    And16(a=outNx, b=outNy, out=outXAndY);
+    Mux16(a=outXAndY, b=outXAddY, sel=f, out=outF);
+
+    // no == 1
+    Not16(in=outF, out=outXNotY);
+    Mux16(a=outF, b=outXNotY, sel=no, out=out, out[15]=firstBit, out[0..7]=orFirstPart, out[8..15]=orSecondPart);
+
+    // out == 0
+    Or8Way(in=orFirstPart, out=or8WayFirstPart);
+    Or8Way(in=orSecondPart, out=or8WaySecondPart);
+    Or(a=or8WayFirstPart, b=or8WaySecondPart, out=zrOut);
+    Mux(a=true, b=false, sel=zrOut, out=zr);
+
+    // out < 0
+    And(a=firstBit, b=firstBit, out=ngOut);
+    Mux(a=false, b=true, sel=ngOut, out=ng);
 }
